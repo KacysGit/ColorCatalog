@@ -1,0 +1,16 @@
+Here I'll write notable portions of the course
+
+__FlexBox__
+
+Gives ability to compose styles anywhere on a screen
+
+Flex Containers: either display child elements in a row or in a column
+    default is in a column
+Flex Elements: the objects in a container 
+
+justifyContent: "space-between", // spaces the elements evenly within a container
+justifyContent: "space-around", // spaces the elements from the margins of the container
+    
+
+Useful resource for learning CSS/Flexbox:
+https://css-tricks.com/snippets/ 
