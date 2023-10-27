@@ -1,0 +1,48 @@
+__LinkedIn Learning__
+
+import React from "react"
+import {
+  ActivityIndicator, 
+  Button, 
+  Alert,
+  Dimensions,
+  Text,
+  View,
+  ProgressBarAndroid,
+  ProgressViewIOS,
+  Platform
+} from "react-native"
+// activity indicator creates a buffer indicator 
+
+// declare outside of the function since it will not change
+// this is how to get the dimensions of the device being used
+const {height, width} = Dimensions.get('window');
+
+export default function App(){
+  // add function to handle button action
+  const onButtonPress = () => {
+    Alert.alert(`${new Date().toLocaleTimeString()} button press`);
+  };
+  return (
+    <View style={{padding:50}}>
+      {Platform.OS === "ios" && <ProgressViewIOS progress={0.5} />}
+      {Platform.OS === "android" &&
+      <ProgressBarAndroid
+        styleAttr="Horizontal"
+        indeterminate={false}
+        color={"blue"}
+        progress={0.5} />
+      }
+      <Text> Hello World </Text>
+      <Text> Red </Text>
+      <Text> Blue </Text>
+      <Button title="Click Me" onPress={(onButtonPress)} />
+      <ActivityIndicator size="large" color="61DBFB" />
+
+      <Text>Device Type: {Platform.OS}</Text>
+      <Text>Height: {height}</Text>
+      <Text>Width: {width}</Text>
+
+    </View>
+  )
+}

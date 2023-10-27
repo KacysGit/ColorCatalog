@@ -1,5 +1,11 @@
+**Useful Resources**
+React Native Documatation with helpful libraries
+https://reactnative.dev/docs/accessibilityinfo
 
+
+**Useful Functions**
 
 __progress bar__
 
 ProgressBarAndroidBase and ProgressViewIOS imports
+
