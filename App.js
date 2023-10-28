@@ -6,27 +6,39 @@ import {
   TouchableHighlight
 } from "react-native";
 
-export default function App() {
-  const [backgroundColor, setBackgroundColor] = useState(
-    "blue"
-  );
-  return (
-    <View style={[styles.container, { backgroundColor }]}>
-      <TouchableHighlight
+function ColorButton({ backgroundColor, onPress=f=>f }) {
+  return ( // onPress=f=>f is a dummy function so the application doesn't
+            // break in the case that it's not defined
+    <TouchableHighlight
         style={styles.button}
-        onPress={() => setBackgroundColor("yellow")}
+        onPress={() => onPress(backgroundColor)}
         underlayColor="orange"
       >
         <View style={styles.row}>
           <View
             style={[
               styles.sample,
-              { backgroundColor: "yellow" }
+              { backgroundColor }
             ]}
           />
-          <Text style={styles.buttonText}>yellow</Text>
+          <Text style={styles.buttonText}>{backgroundColor}</Text>
         </View>
       </TouchableHighlight>
+  );
+}
+
+export default function App() {
+  const [backgroundColor, setBackgroundColor] = useState(
+    "blue"
+  );
+  return (
+    <View style={[styles.container, { backgroundColor }]}>
+      <ColorButton backgroundColor="red" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="green" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="blue" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="orange" onPress={setBackgroundColor}/>
+      <ColorButton backgroundColor="yellow" onPress={setBackgroundColor}/>
+      
     </View>
   );
 }
