@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState} from "react"; // useState is called a hook
 import { Text, View, StyleSheet } from "react-native";
 
 export default function App() {
+  const [backgroundColor, setBackgroundColor] = useState("blue");
   return (
-    <View style={styles.container}>
-      <Text style={styles.button}>green</Text>
-      <Text style={styles.button}>red</Text>
+    <View style={[styles.container, {backgroundColor}]}>
+      <Text style={styles.button}
+        onPress={() => setBackgroundColor("green")}>green</Text>
+      <Text style={styles.button} 
+        onPress={() => setBackgroundColor("red")}>red</Text>
     </View>
   );
 }
