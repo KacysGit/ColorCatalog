@@ -2,8 +2,14 @@ import React from "react";
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
+  Dimensions
 } from "react-native";
+
+// import picture
+import picDevil from "./assets/JasmanianDevil.jpg"
+import jasmine from "./assets/Jasmine.jpg"
 
 export default function App(){
   return (
@@ -11,6 +17,8 @@ export default function App(){
       <Text style={styles.text}> Red </Text>
       <Text style={[styles.text, styles.selectedText]}> Green </Text>
       <Text style={styles.text}> Blue </Text>
+      <Image style={styles.image} source={picDevil} />
+      <Image style={styles.image} source={jasmine} />
     </View>
   );
 }
@@ -19,6 +27,7 @@ export default function App(){
 const styles = StyleSheet.create({
   // add margin at the top of the view
   page: {
+    flex: 1,
     flexDirection: "column",
     justifyContent: "space-around", // spaces the elements within a container
     alignItems: "flex-start",
@@ -26,6 +35,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#DDD",
     margin: 10, 
     padding: 5
+  },
+  image: {
+   // resizeMode: "center"
+   flex: 1,
+   borderRadius: 50,
+   margin:10,
+   width: Dimensions.get("window").width -10
+
   },
   text: {
     //flex: 1, // evenly distribute box across whole row
