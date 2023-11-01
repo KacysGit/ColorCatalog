@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import {
   FlatList, // scrollable list of content
-  StyleSheet
+  StyleSheet,
+  Alert
 } from "react-native";
 import ColorButton from "./Components/ColorButton";
 import defaultColors from "./data/defaultColors.json"

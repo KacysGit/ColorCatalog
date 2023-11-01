@@ -23,7 +23,7 @@ export default function ColorForm({onNewColor=f => f}) {
         title="add" 
         onPress={()=> {
           input.current.blur();
-          onNewColor(inputerValue);
+          onNewColor(inputValue);
           setValue("");
       }} />
     </View>
