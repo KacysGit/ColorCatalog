@@ -5,21 +5,24 @@ import {
 } from "react-native";
 import ColorButton from "./Components/ColorButton";
 import defaultColors from "./data/defaultColors.json"
-
+import ColorForm from "./Components/ColorForm"
 
 export default function App() {
   const [backgroundColor, setBackgroundColor] = useState(
     "blue"
   );
   return (
-    <FlatList style={[styles.container, { backgroundColor }]}
-      data={defaultColors}
-      renderItem={({ item }) => {
-        return (
-          <ColorButton key={item.id} backgroundColor={item.color} onPress={setBackgroundColor} />
-        ) // the key property is always required by react when working with lists
-      }}
-    />
+    <>
+      <ColorForm />
+      <FlatList style={[styles.container, { backgroundColor }]}
+        data={defaultColors}
+        renderItem={({ item }) => {
+          return (
+            <ColorButton key={item.id} backgroundColor={item.color} onPress={setBackgroundColor} />
+          ) // the key property is always required by react when working with lists
+        }}
+      />
+    </>
   );
 }
 
