@@ -13,7 +13,8 @@ export default function App() {
   );
   return (
     <>
-      <ColorForm />
+      <ColorForm onNewColor={newColor => Alert.alert(`TODO: add color ${newColor}`)}
+      />
       <FlatList style={[styles.container, { backgroundColor }]}
         data={defaultColors}
         renderItem={({ item }) => {
