@@ -1,3 +1,5 @@
+// this file creates the button for the user to add more color buttons
+
 import React, { useState, useRef } from "react";
 import {
   StyleSheet,
