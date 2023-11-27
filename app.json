@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ColorCatelog",
-    "slug": "ColorCatelog",
+    "name": "ColorCatalog",
+    "slug": "ColorCatalog",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
